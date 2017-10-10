@@ -1,7 +1,63 @@
-\begin{frame}{Contributions}
-    \begin{block}{Contribution of the paper}
+\begin{frame}{The paper}
+    \begin{block}{}
         \begin{itemize}
-            \item Propane
+            \item Presented at ACM's SIGCOMM Conference,
+            \item August 22-26, 2016,
+            \item Currently cited \~{}14 times.
+            \item Followed up 
         \end{itemize}
     \end{block}
+\end{frame}
+
+\begin{frame}{Contributions}
+    \begin{block}{Contribution of the paper}<1->
+        \begin{itemize}
+            \item High-level language for expressing \textcolor{ReneOrange}{network rules},
+            \item \textcolor{ReneOrange}{Automatic conversion} from said rules to configuration of devices.
+        \end{itemize}
+    \end{block}
+    \begin{block}{Propane}<2>
+        \begin{itemize}
+            \item Open source\footnote{\url{https://github.com/rabeckett/propane}} compiler written in F\#,
+            \item 
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Border Gateway Protocol (BGP) briefly}
+    \begin{block}{Autonomous Systems (AS)}
+        \begin{itemize}
+            \item Used to connect AS's (External BGP),
+            \item Can also be used within an AS (Internal BGP).
+        \end{itemize}
+    \end{block}
+    \begin{block}{Financial Interests}
+        \begin{itemize}
+            \item Local policies at each AS,
+            \item Desire for other to carry your traffic,
+            \item Desire to avoid carrying traffic without compensation.
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Border Gateway Protocol (BGP) briefly (2)}
+    \begin{block}{The protocol}
+        \begin{itemize}
+            \item Route announcements are sent to neighbors,
+            \item Routes can be \textcolor{ReneOrange}{rejected} if they doesn't fit into the local policy,
+            \item Neighbor AS's updates their routing information base to new routes, and announces recursively.
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Border Gateway Protocol (BGP) example}
+    \begin{block}{Route announcement}
+        \begin{itemize}
+            \item AS 4 announces \code{1.2.3.4\textbackslash24}
+        \end{itemize}
+    \end{block}
+    \begin{figure}
+        \includegraphics[height=0.5\textheight,keepaspectratio]{figures/BGP-protocol.jpg}
+        \caption*{BGP example\footnote{\url{http://www.cs.princeton.edu/~rbeckett/Propane/}}}
+    \end{figure}
 \end{frame}

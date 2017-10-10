@@ -1,4 +1,4 @@
-\documentclass[t]{beamer}
+\documentclass[c]{beamer}
 
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
@@ -19,7 +19,10 @@
   \definecolor{Mindreblaaligfarve}{RGB}{89,79,191}  
 
   \colorlet{beamer@blendedblue}{aaublue}
-} 
+}
+
+\definecolor{codegray}{gray}{0.9}
+\newcommand{\code}[1]{\colorbox{codegray}{\texttt{#1}}}
 
 \setbeamercolor{date in head/foot}{bg=Mindreblaaligfarve, fg=white}
 \setbeamercolor{title in head/foot}{bg=Blaaligfarve, fg=white}
@@ -28,7 +31,7 @@
 \setbeamercolor{block title alerted}{bg=Blaaligfarve, fg=white}
 \setbeamercolor{block title example}{bg=ReneOrange, fg=white}
 
-\title[Don’t Mind the Gap]{Bridging Network-wide Objectives and Device-level Configurations}
-\subtitle{spDS presentation}
+\title[Don’t Mind the Gap]{Don’t Mind the Gap}
+\subtitle{Bridging Network-wide Objectives and Device-level Configurations}
 \author{Troels Krøgh}
 \date{2017-10-13}
