@@ -57,7 +57,75 @@
         \end{itemize}
     \end{block}
     \begin{figure}
-        \includegraphics[height=0.5\textheight,keepaspectratio]{figures/BGP-protocol.jpg}
+        \includegraphics[height=0.45\textheight,keepaspectratio]{figures/BGP-protocol.jpg}
         \caption*{BGP example\footnote{\url{http://www.cs.princeton.edu/~rbeckett/Propane/}}}
     \end{figure}
 \end{frame}
+
+\begin{frame}{An example of policy complience failure under link failure.}
+    \begin{columns}
+        \begin{column}{0.45\textwidth}
+            \begin{figure}
+                \includegraphics[width=1\textwidth,keepaspectratio,frame,clip,trim={0cm 0cm 9cm 0cm}]{figures/ex2_clean.pdf}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.50\textwidth}
+            \begin{block}{Policy}
+                \begin{enumerate}
+                    \item Left cluster has global services with PG* prefixes, which sould be announced externally as an aggregate PG.
+                    \item Right cluster has local services with PL* prefixes, which should not be announced externally.
+                \end{enumerate}
+            \end{block}
+            \begin{block}<2>    {Policy implementation}
+                \begin{enumerate}
+                    \item X and Y exports routes from C and D.
+                    \item X and Y doesn't export routes from G and H.
+                \end{enumerate}
+            \end{block}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{An example of policy complience failure under link failure.}
+    \begin{columns}
+        \begin{column}{0.45\textwidth}
+            \begin{figure}
+                \includegraphics[width=1\textwidth,keepaspectratio,frame,clip,trim={0cm 0cm 9cm 0cm}]{figures/ex2_1_failed_links.pdf}
+                %\caption*{BGP example\footnote{\url{http://www.cs.princeton.edu/~rbeckett/Propane/}}}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.50\textwidth}
+            \begin{block}{Link failures}
+                \begin{itemize}
+                    \item X-G
+                    \item X-H
+                \end{itemize}
+            \end{block}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{An example of policy complience failure under link failure.}
+    \begin{columns}
+        \begin{column}{0.45\textwidth}
+            \begin{figure}
+                \includegraphics[width=1\textwidth,keepaspectratio,frame,clip,trim={0cm 0cm 9cm 0cm}]{figures/ex2_1_failed_links_new_path.pdf}
+                %\caption*{BGP example\footnote{\url{http://www.cs.princeton.edu/~rbeckett/Propane/}}}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.50\textwidth}
+            \begin{block}{Link failures}
+                \begin{itemize}
+                    \item X-G
+                    \item X-H
+                \end{itemize}
+            \end{block}
+            \begin{block}{Problems}
+                \begin{itemize}
+                    \item H-Y-D-X
+                \end{itemize}
+            \end{block}
+        \end{column}
+    \end{columns}
+\end{frame}
+
