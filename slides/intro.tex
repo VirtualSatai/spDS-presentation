@@ -10,7 +10,7 @@
 \end{frame}
 
 \begin{frame}{Contributions}
-    \begin{block}{Contribution of the paper}
+    \begin{block}{Contributions of the paper}
         \begin{itemize}
             \item High-level language for expressing \textcolor{ReneOrange}{network rules},
             \item \textcolor{ReneOrange}{Automatic conversion} from said rules to configuration of devices.
@@ -114,14 +114,40 @@
                     \item X-H
                 \end{itemize}
             \end{block}
-            \begin{block}{Problems}
+            \begin{block}{Consider the path}
                 \begin{itemize}
                     \item H-Y-D-X
+                    \item X will announce H since the path comes from D.
                 \end{itemize}
             \end{block}
         \end{column}
     \end{columns}
 \end{frame}
+
+\begin{frame}{An example of policy compliance failure under link failure.}
+    \begin{columns}
+        \begin{column}{0.45\textwidth}
+            \begin{figure}
+                \includegraphics[width=1\textwidth,keepaspectratio,clip,trim={0cm 0cm 9cm 0cm}]{figures/ex2_2_failed_links.pdf}
+                %\caption*{BGP example\footnote{\url{http://www.cs.princeton.edu/~rbeckett/Propane/}}}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.50\textwidth}
+            \begin{block}{Link failures}
+                \begin{itemize}
+                    \item D-A
+                    \item X-C
+                \end{itemize}
+            \end{block}
+            \begin{block}{With valleys disallowed}
+                \begin{itemize}
+                    \item X will announce PG externally, but has no path to A.
+                \end{itemize}
+            \end{block}
+        \end{column}
+    \end{columns}
+\end{frame}
+
 
 \begin{frame}{Bridging the Gap}
     \begin{block}{Propane}
