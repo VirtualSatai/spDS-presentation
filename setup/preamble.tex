@@ -5,7 +5,10 @@
 \usepackage{tikz} 
 \usepackage{caption}
 \usepackage[export]{adjustbox}
-\usetikzlibrary{arrows}   
+\usetikzlibrary{arrows,automata,positioning}
+
+\newcommand{\state}[4]{\node[state,#3](#1)[#4]{#2};}
+\newcommand{\transition}[4]{\path[->] (#1) edge [#4] node {#3} (#2);}
 
 \mode<presentation>
 {
