@@ -1,10 +1,10 @@
 \begin{frame}{The paper}
     \begin{block}{}
         \begin{itemize}
-            \item Presented at ACM's SIGCOMM Conference,
-            \item August 22-26, 2016,
-            \item Currently cited \~{}14 times.
-            \item Followed up in June of 2017.
+            \item Presented at ACM's SIGCOMM Conference
+            \item August 22-26, 2016
+            \item Currently cited \~{}14 times
+            \item Followed up in June of 2017
         \end{itemize}
     \end{block}
 \end{frame}
@@ -35,7 +35,7 @@
 \end{frame}
 
 \begin{frame}{Border Gateway Protocol (BGP) briefly (2)}
-    \begin{block}{The protocol}
+    \begin{block}{Route announcements}
         \begin{itemize}
             \item Route announcements are sent to neighbors,
             \item Routes can be \textcolor{ReneOrange}{rejected} if they doesn't fit into the local policy,
@@ -72,7 +72,7 @@
             \end{block}
             \begin{block}<2>    {Policy implementation}
                 \begin{enumerate}
-                    \item X and Y exports routes from C and D.
+                    \item X and Y exports routes from C and D as an aggregate.
                     \item X and Y doesn't export routes from G and H.
                 \end{enumerate}
             \end{block}
@@ -190,22 +190,35 @@
     \end{columns}
 \end{frame}
 
-\begin{frame}{Analyzing the PGIR}
+\begin{frame}{Analyzing the PGIR: Failure-safety}
     \begin{block}{Failure-safety}
         \begin{itemize}
             \item Regret-free preferences
+            \begin{itemize}
+                \item Given multiple options, is one of them better in case of any link failure?
+            \end{itemize}
             \item Avoiding loops
+            \begin{itemize}
+                \item BGP will not allow it!
+            \end{itemize}
         \end{itemize}
     \end{block}
-    \begin{block}<2>{Aggregation-safety}
+\end{frame}
+
+\begin{frame}{Analyzing the PGIR: Aggregation-safety}
+    \begin{block}{Aggregation-safety}
         \begin{itemize}
             \item Avoid black hole traffic for up to \textit{k} failures.
             \item Can be seen as a variation of the min-cut problem.
         \end{itemize}
     \end{block}
+    \begin{figure}[t!]
+        \includegraphics[width=0.5\columnwidth]{figures/aggregation}
+        \vspace{-1em}
+    \end{figure}
 \end{frame}
 
-\begin{frame}{Results using Propane}
+\begin{frame}{Evaluation}
     \begin{columns}
         \begin{column}{0.45\textwidth}
             \begin{figure}
@@ -215,7 +228,6 @@
         \begin{column}{0.50\textwidth}
             \begin{block}{Expressiveness}
                 \begin{itemize}
-                    \item Not tested, only from informal interviews,
                     \item Network operators verified semantic preservation,
                     \item Could translate all network policies.
                 \end{itemize}
@@ -234,7 +246,7 @@
         \begin{itemize}
             \item Takes in the topology and a high level policy of a network,
             \item Generates a configuration for each router in the network.
-            \item Correct by construction.
+            \item Applicable for real world scenarios.
         \end{itemize}
     \end{block}
 \end{frame}
